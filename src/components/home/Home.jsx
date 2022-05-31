@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import hero from '../../assets/hero.png'
+import Button from '../Button';
 
 export default function Home() {
     const [value, setValue] = useState('$5000 - $10000');
@@ -13,7 +14,7 @@ export default function Home() {
             <div className="info">
                 <h1>It's Time</h1>
                 <h1>Explore The World</h1>
-                <button>Plan Your Trip</button>
+                <Button text='Plan Your Trip' />
             </div>
             <div className="planner">
                 <form>
@@ -29,11 +30,11 @@ export default function Home() {
                         <input type="date" />
                     </div>
                     <div className="row">
-                        <label>Check In</label>
+                        <label>Price Range</label>
                         <input type="text" value={value} onChange={e=> setValue(e.target.value)} />
                     </div>
                     <div className="row">
-                        <button>Discover More</button>
+                        <Button text='Discover More' />
                     </div>
                 </form>
             </div>
@@ -47,7 +48,7 @@ const Section = styled.section`
     position: relative;
     .background {
         img {
-            height: 90vh;
+            height: 80vh;
             width: 100%;
         }
     }
@@ -65,6 +66,41 @@ const Section = styled.section`
             position: absolute;
             bottom: -2rem;
             right: 0;
+            background-color: white;
+            padding: 2rem;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            form {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 3rem;
+                .row {
+                    display: flex;
+                    flex-direction: column;
+                    text-align: start;
+                    label {
+                        font-size: 0.7rem;
+                        color: var(--secondary-text);
+                    }
+                    input, select {
+                        border: none;
+                        width: 100%;
+                        color: var(--primary-color);
+                        margin-top: 0.5rem;
+                        background-color: white;
+                        font-size: 1.1rem;
+                        border-bottom: 1px solid #f88f4d;
+                        padding-bottom: 0.3rem;
+                    }
+                    input:focus {
+                        outline: none;
+                    }
+                    input[type='date']::-webkit-calendar-picker-indicator {
+                        cursor: pointer;
+                        filter: invert(58%) sepia(69%) saturate(2588%) hue-rotate(325deg) brightness(105%) contrast(101%);
+                    }
+                }
+            }
         }
     }
 `;
