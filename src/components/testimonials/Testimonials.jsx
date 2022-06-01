@@ -78,4 +78,24 @@ const Section = styled.section`
         }
       }
     }
+    @media screen and (min-width: 280px) and (max-width: 1080px) {
+      margin-top: 5rem;
+      .title {
+        display: flex;
+        justify-content: center;
+        h1 {
+          text-align: center;
+          font-size: 1.5rem;
+          width: 80%;
+        }
+      }
+      .testimonials {
+        flex-direction: column;
+        overflow: hidden;
+        .testimonial-image-one, .testimonial-image-two {
+          max-inline-size: 100%;
+          block-size: auto;
+        }
+      }
+    }
 `;

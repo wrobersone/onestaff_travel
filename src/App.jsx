@@ -6,6 +6,9 @@ import Offer from './components/Offer'
 import Services from './components/services/Services'
 import Tours from './components/Tours'
 import Testimonials from './components/testimonials/Testimonials'
+import DownloadApp from './components/DownloadApp'
+import Footer from './components/footer/Footer'
+import ScrollToTop from './components/ScrollToTop'
 
 export default function App() {
   return (
@@ -17,6 +20,9 @@ export default function App() {
       <Offer />
       <Tours />
       <Testimonials />
+      <DownloadApp />
+      <Footer />
+      <ScrollToTop />
     </div>
   )
 }
